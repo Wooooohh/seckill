@@ -1,24 +1,21 @@
 package edu.csuft.seckill.service;
 
 import com.alibaba.druid.util.StringUtils;
-import com.jesper.seckill.bean.User;
-import com.jesper.seckill.exception.GlobalException;
-import com.jesper.seckill.mapper.UserMapper;
-import com.jesper.seckill.redis.RedisService;
-import com.jesper.seckill.redis.UserKey;
-import com.jesper.seckill.result.CodeMsg;
-import com.jesper.seckill.util.MD5Util;
-import com.jesper.seckill.util.UUIDUtil;
-import com.jesper.seckill.vo.LoginVo;
+import edu.csuft.seckill.dao.UserMapper;
+import edu.csuft.seckill.entity.CodeMsg;
+import edu.csuft.seckill.entity.User;
+import edu.csuft.seckill.exception.GlobalException;
+import edu.csuft.seckill.redis.RedisService;
+import edu.csuft.seckill.redis.UserKey;
+import edu.csuft.seckill.util.MD5Utils;
+import edu.csuft.seckill.util.UUIDUtil;
+import edu.csuft.seckill.vo.LoginVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Created by jiangyunxiong on 2018/5/22.
- */
 @Service
 public class UserService {
     @Autowired
@@ -56,7 +53,7 @@ public class UserService {
         //更新数据库
         User toBeUpdate = new User();
         toBeUpdate.setId(id);
-        toBeUpdate.setPassword(MD5Util.formPassToDBPass(formPass, user.getSalt()));
+        toBeUpdate.setPassword(MD5Utils.formPassToDBPass(formPass, user.getSalt()));
         userMapper.update(toBeUpdate);
         //更新缓存：先删除再插入
         redisService.delete(UserKey.getById, ""+id);
@@ -79,7 +76,7 @@ public class UserService {
         //验证密码
         String dbPass = user.getPassword();
         String saltDB = user.getSalt();
-        String calcPass = MD5Util.formPassToDBPass(formPass, saltDB);
+        String calcPass = MD5Utils.formPassToDBPass(formPass, saltDB);
         if (!calcPass.equals(dbPass)) {
             throw new GlobalException(CodeMsg.PASSWORD_ERROR);
         }

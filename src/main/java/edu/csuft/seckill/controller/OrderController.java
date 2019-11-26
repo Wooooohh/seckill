@@ -5,6 +5,7 @@ import edu.csuft.seckill.entity.CodeMsg;
 import edu.csuft.seckill.entity.OrderInfo;
 import edu.csuft.seckill.entity.Result;
 import edu.csuft.seckill.entity.User;
+import edu.csuft.seckill.redis.RedisService;
 import edu.csuft.seckill.service.GoodsService;
 import edu.csuft.seckill.service.OrderService;
 import edu.csuft.seckill.service.UserService;

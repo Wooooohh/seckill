@@ -1,12 +1,10 @@
 package edu.csuft.seckill.vo;
 
-import com.jesper.seckill.bean.Goods;
+import edu.csuft.seckill.entity.Goods;
 
 import java.util.Date;
 
-/**
- * Created by jiangyunxiong on 2018/5/22.
- */
+
 public class GoodsVo extends Goods {
     private Double seckillPrice;
     private Integer stockCount;

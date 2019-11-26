@@ -15,4 +15,7 @@ public interface UserMapper {
 
     @Update("update sk_user set password = #{password} where id = #{id}")
     public void update(User toBeUpdate);
+
+    @Select("select * from ")
+    User findByUserName(String userName);
 }

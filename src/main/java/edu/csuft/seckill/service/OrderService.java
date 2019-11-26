@@ -5,6 +5,8 @@ import edu.csuft.seckill.dao.OrderMapper;
 import edu.csuft.seckill.entity.OrderInfo;
 import edu.csuft.seckill.entity.SeckillOrder;
 import edu.csuft.seckill.entity.User;
+import edu.csuft.seckill.redis.OrderKey;
+import edu.csuft.seckill.redis.RedisService;
 import edu.csuft.seckill.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

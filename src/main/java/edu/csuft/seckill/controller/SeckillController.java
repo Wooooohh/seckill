@@ -1,18 +1,19 @@
 package edu.csuft.seckill.controller;
 
+
 import com.google.common.util.concurrent.RateLimiter;
-import com.jesper.seckill.bean.SeckillOrder;
-import com.jesper.seckill.bean.User;
-import com.jesper.seckill.rabbitmq.MQSender;
-import com.jesper.seckill.rabbitmq.SeckillMessage;
-import com.jesper.seckill.redis.GoodsKey;
-import com.jesper.seckill.redis.RedisService;
-import com.jesper.seckill.result.CodeMsg;
-import com.jesper.seckill.result.Result;
-import com.jesper.seckill.service.GoodsService;
-import com.jesper.seckill.service.OrderService;
-import com.jesper.seckill.service.SeckillService;
-import com.jesper.seckill.vo.GoodsVo;
+import edu.csuft.seckill.entity.CodeMsg;
+import edu.csuft.seckill.entity.Result;
+import edu.csuft.seckill.entity.SeckillOrder;
+import edu.csuft.seckill.entity.User;
+import edu.csuft.seckill.rabbitmq.MQSender;
+import edu.csuft.seckill.rabbitmq.SeckillMessage;
+import edu.csuft.seckill.redis.GoodsKey;
+import edu.csuft.seckill.redis.RedisService;
+import edu.csuft.seckill.service.GoodsService;
+import edu.csuft.seckill.service.OrderService;
+import edu.csuft.seckill.service.SeckillService;
+import edu.csuft.seckill.vo.GoodsVo;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,9 +27,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by jiangyunxiong on 2018/5/22.
- */
 @Controller
 @RequestMapping("/seckill")
 public class SeckillController implements InitializingBean {

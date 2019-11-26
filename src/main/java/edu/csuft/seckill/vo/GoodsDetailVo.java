@@ -1,10 +1,8 @@
 package edu.csuft.seckill.vo;
 
-import com.jesper.seckill.bean.User;
 
-/**
- * Created by jiangyunxiong on 2018/5/24.
- */
+import edu.csuft.seckill.entity.User;
+
 public class GoodsDetailVo {
     private int seckillStatus = 0;
     private int remainSeconds = 0;

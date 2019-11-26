@@ -2,8 +2,8 @@ package edu.csuft.seckill.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import com.jesper.seckill.bean.User;
-
+import edu.csuft.seckill.entity.User;
+import org.apache.commons.lang3.StringUtils;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -13,6 +13,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
 
 public class UserUtil {
 	
@@ -26,7 +27,7 @@ public class UserUtil {
 			user.setNickname("user"+i);
 			user.setRegisterDate(new Date());
 			user.setSalt("1a2b3c");
-			user.setPassword(MD5Util.inputPassToDbPass("123456", user.getSalt()));
+//			user.setPassword(MD5Utils.inputPassToDbPass("123456", user.getSalt()));
 			users.add(user);
 		}
 		System.out.println("create user");
@@ -64,7 +65,7 @@ public class UserUtil {
 			co.setRequestMethod("POST");
 			co.setDoOutput(true);
 			OutputStream out = co.getOutputStream();
-			String params = "mobile="+user.getId()+"&password="+MD5Util.inputPassToFormPass("123456");
+			String params = "mobile="+user.getId()+"&password="+MD5Utils.inputPassToFormPass("123456");
 			out.write(params.getBytes());
 			out.flush();
 			InputStream inputStream = co.getInputStream();

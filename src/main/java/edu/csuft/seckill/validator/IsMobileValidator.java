@@ -1,14 +1,12 @@
 package edu.csuft.seckill.validator;
 
-import com.jesper.seckill.util.ValidatorUtil;
-import org.apache.commons.lang3.StringUtils;
+import com.alibaba.druid.util.StringUtils;
+import edu.csuft.seckill.util.ValidatorUtil;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 /**
- * Created by jiangyunxiong on 2018/5/22.
- * <p>
  * 自定义手机格式校验器
  */
 public class IsMobileValidator implements ConstraintValidator<IsMobile, String> {

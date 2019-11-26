@@ -1,18 +1,16 @@
 package edu.csuft.seckill.service;
 
-import com.jesper.seckill.bean.OrderInfo;
-import com.jesper.seckill.bean.SeckillOrder;
-import com.jesper.seckill.bean.User;
-import com.jesper.seckill.redis.RedisService;
-import com.jesper.seckill.redis.SeckillKey;
-import com.jesper.seckill.vo.GoodsVo;
+
+import edu.csuft.seckill.entity.OrderInfo;
+import edu.csuft.seckill.entity.SeckillOrder;
+import edu.csuft.seckill.entity.User;
+import edu.csuft.seckill.redis.RedisService;
+import edu.csuft.seckill.redis.SeckillKey;
+import edu.csuft.seckill.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-/**
- * Created by jiangyunxiong on 2018/5/23.
- */
 @Service
 public class SeckillService {
 

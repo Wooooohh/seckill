@@ -1,16 +1,14 @@
 package edu.csuft.seckill.service;
 
-import com.jesper.seckill.bean.SeckillGoods;
-import com.jesper.seckill.mapper.GoodsMapper;
-import com.jesper.seckill.vo.GoodsVo;
+import edu.csuft.seckill.dao.GoodsMapper;
+import edu.csuft.seckill.entity.SeckillGoods;
+import edu.csuft.seckill.vo.GoodsVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-/**
- * Created by jiangyunxiong on 2018/5/22.
- */
+
 @Service
 public class GoodsService {
 
